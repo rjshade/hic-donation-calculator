@@ -117,6 +117,7 @@
     function fillDonationData( donationProfile )
     {
         year = 0;
+        var donationData_graph = [];
         for( step = 0; step < donationProfile.length - 1; step++ )
         {
             var lower_bound = donationProfile[step][0]
@@ -126,11 +127,13 @@
 
             while( earningData[year] >= lower_bound && earningData[year] < upper_bound )
             {
+                // inverted % for graph as we want to show it *above* the earnings
+                donationData_graph[year] = earningData[year] * (100-percentage)/100;
                 donationData[year] = earningData[year] * percentage/100;
                 year++;
             }
         }
-        chart1.series[1].setData(donationData);
+        chart1.series[1].setData(donationData_graph);
     }
 
 
