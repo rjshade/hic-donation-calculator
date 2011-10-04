@@ -256,6 +256,7 @@
 
       plotOptions: {
         area: {
+            fillOpacity: 0,
             marker: {
                enabled: false,
                symbol: 'circle',
@@ -266,22 +267,26 @@
                   }
                }
             }
-         }
+          }
       },
 
          series: [{
-            name: 'Earnings',
-            data: []
-         }, {
             name: 'Donations',
-            data: []
+            data: [],
+            <!--color: '#f30064',-->
+            opacity: 0
+         }, {
+            name: 'Net income',
+            data: [],
+            color: '#ccff66',
+            opacity: 100
          }]
       });
 
       updateDonationProfile()
       fillEarningData( earningProfile );
       fillDonationData( donationProfile );
-        calculateMoneyDonated();
+      calculateMoneyDonated();
     });
 
 
