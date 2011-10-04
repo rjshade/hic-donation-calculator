@@ -22,22 +22,6 @@ body
 }
 #demo-frame > div.demo { padding: 10px !important; }
 
-.tax-band-slider {
-    margin:15px; 
-    width: 200px;
-    height: 150px;
-    display: inline-block;
-    letter-spacing: normal;
-    font-size: normal;
-    white-space: normal;
-    text-align: normal;
-    vertical-align: middle;
-}
-.tax-band-slider .money
-{ font-size: 1.5em;}
-.tax-band-slider .percentage
-{ font-size: 5em; float: right}
-
 
 #money_donated
 { font-weight: bold; font-size: 1.5em }
