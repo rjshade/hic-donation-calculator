@@ -97,8 +97,16 @@ function calculateMoneyDonated()
         total += donationData[year]
     }
 
-    $( "#money_donated" ).html("£" + numberWithCommas(total.toFixed(0)))
-    $( "#lives_saved" ).html( (total / 300).toFixed(0) )
+    moneyDonated_total = total.toFixed(0);
+    moneyDonated_perDay = moneyDonated_total / (yearsToWork * 365); //leap years!?
+
+    livesSaved_total = (total / 300);
+    livesSaved_perDay = ((total / 300) / (yearsToWork * 365));
+
+    $( "#money_donated" ).html("£" + numberWithCommas(moneyDonated_total))
+
+    $( "#lives_saved_total" ).html( (livesSaved_total).toFixed(0) )
+    $( "#lives_saved_per_day" ).html( (livesSaved_perDay).toFixed(2) )
 
     //drawCanvasPeople( (total / 300).toFixed(0) );
 }
@@ -144,7 +152,7 @@ $(function() {
       range: "min",
       value: 20,
       min: 10000,
-      max: 10000000, 
+      max: 5000000, 
       //orientation: 'vertical',
       change: startingSalarySliderUpdate,
       slide: startingSalarySliderUpdate
@@ -155,7 +163,7 @@ $(function() {
       range: "min",
       value: 50,
       min: 10000,
-      max: 10000000, 
+      max: 5000000, 
       //orientation: 'vertical',
       change: endingSalarySliderUpdate,
       slide: endingSalarySliderUpdate
